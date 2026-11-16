@@ -1,0 +1,755 @@
+/* =========================================
+   Theme Variables: Dark Navy & Champagne Gold
+   ========================================= */
+:root {
+    --navy-bg: #070d19;          /* Deep dark navy background */
+    --navy-surface: #0e1726;     /* Card / header background */
+    --navy-border: #1a2638;      /* Subtle border color */
+    
+    --gold-primary: #d4af37;     /* Champagne gold */
+    --gold-light: #fae6b1;       /* Light champagne accent */
+    --gold-glow: rgba(212, 175, 55, 0.15); /* Soft gold glow */
+    
+    --text-primary: #f8fafc;     /* Clean off-white */
+    --text-muted: #94a3b8;       /* Muted slate text */
+    
+    --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --transition-speed: 0.3s;
+}
+
+/* =========================================
+   Global Reset & Base
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--navy-bg);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* =========================================
+   Site Header & Navigation
+   ========================================= */
+.site-header {
+    width: 100%;
+    background-color: var(--navy-bg);
+    border-bottom: 1px solid var(--navy-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.logo-img {
+    max-height: 42px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.logo-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+    transition: color var(--transition-speed) ease;
+}
+
+.logo-link:hover .logo-name {
+    color: var(--gold-primary);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+    padding: 0.25rem 0;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--gold-primary);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--gold-primary);
+    border-radius: 2px;
+}
+
+/* =========================================
+   Hero Section
+   ========================================= */
+.hero-section {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    
+    /* -------------------------------------------------------------
+       HERO BACKGROUND IMAGE SYNTAX:
+       Replace 'background.jpg' with your image file name or path.
+       The linear-gradient acts as a dark navy overlay to ensure
+       your white & gold text stays legible over any photo.
+       ------------------------------------------------------------- */
+    background-image:url();
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Fallback background color if image is loading or missing */
+    background-color: var(--navy-bg);
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero-subtitle {
+    color: var(--gold-primary);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    line-height: 1.25;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* =========================================
+   Buttons
+   ========================================= */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--gold-primary);
+    color: var(--navy-bg);
+    border: 1px solid var(--gold-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--gold-light);
+    border-color: var(--gold-light);
+    box-shadow: 0 0 15px var(--gold-glow);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--navy-border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--gold-primary);
+    color: var(--gold-primary);
+}
+
+/* =========================================
+   About Page: Layout & Bio
+   ========================================= */
+.page-main {
+    padding-bottom: 5rem;
+}
+
+.about-section {
+    padding: 4.5rem 2rem 3rem;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.about-image-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--navy-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    background-color: var(--navy-surface);
+}
+
+.about-image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    border: 1px solid var(--gold-primary);
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4 / 5;
+    background-color: var(--navy-surface);
+}
+
+.section-subtitle {
+    color: var(--gold-primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.about-role {
+    font-size: 1.3rem;
+    color: var(--gold-light);
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+.about-bio {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+}
+
+.about-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* =========================================
+   What I Do / Services Section
+   ========================================= */
+.services-section {
+    padding: 3rem 2rem 2rem;
+}
+
+.services-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 3rem;
+}
+
+.section-description {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+.service-card {
+    background-color: var(--navy-surface);
+    border: 1px solid var(--navy-border);
+    border-radius: 10px;
+    padding: 2.25rem 1.75rem;
+    transition: transform var(--transition-speed) ease, border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 10px 25px var(--gold-glow);
+}
+
+.service-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold-primary);
+    margin-bottom: 1rem;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.service-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.85rem;
+}
+
+.service-description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+/* =========================================
+   Skills Detail Section & Bars
+   ========================================= */
+.skills-detail-section {
+    padding: 3rem 2rem 4rem;
+}
+
+.skills-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+}
+
+.skill-category-card {
+    background-color: var(--navy-surface);
+    border: 1px solid var(--navy-border);
+    border-radius: 10px;
+    padding: 2rem;
+    transition: border-color var(--transition-speed) ease;
+}
+
+.skill-category-card:hover {
+    border-color: var(--gold-primary);
+}
+
+.category-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gold-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--navy-border);
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.4rem;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+    border-radius: 3px;
+    transition: width 0.6s ease;
+}
+
+.skills-cta {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: var(--navy-surface);
+    border: 1px solid var(--navy-border);
+    border-radius: 10px;
+}
+
+.cta-text {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+}
+
+/* =========================================
+   Portfolio Section & Grid
+   ========================================= */
+.portfolio-section {
+    padding: 4.5rem 2rem 4rem;
+}
+
+.portfolio-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.project-card {
+    background-color: var(--navy-surface);
+    border: 1px solid var(--navy-border);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-speed) ease, border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 12px 30px var(--gold-glow);
+}
+
+.project-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background-color: #0b1322;
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.04);
+}
+
+.project-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: rgba(7, 13, 25, 0.85);
+    color: var(--gold-primary);
+    border: 1px solid var(--gold-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(4px);
+}
+
+.project-content {
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.project-description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-badge {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--gold-light);
+    border: 1px solid var(--navy-border);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.portfolio-cta {
+    text-align: center;
+    background-color: var(--navy-surface);
+    border: 1px solid var(--navy-border);
+    border-radius: 10px;
+    padding: 3rem 2rem;
+}
+
+.portfolio-cta-title {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.portfolio-cta-text {
+    color: var(--text-muted);
+    margin-bottom: 1.75rem;
+    font-size: 1rem;
+}
+
+/* =========================================
+   Contact Section & Form
+   ========================================= */
+.contact-section {
+    padding: 4.5rem 2rem 4rem;
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.contact-info-card,
+.contact-form-card {
+    background-color: var(--navy-surface);
+    border: 1px solid var(--navy-border);
+    border-radius: 10px;
+    padding: 2.5rem;
+}
+
+.contact-info-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.contact-info-text {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-detail-item {
+    border-left: 3px solid var(--gold-primary);
+    padding-left: 1rem;
+}
+
+.detail-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gold-primary);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.detail-value {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.contact-note-box {
+    background-color: rgba(212, 175, 55, 0.08);
+    border: 1px dashed var(--gold-primary);
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+.note-text {
+    color: var(--gold-light);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-label {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    background-color: var(--navy-bg);
+    border: 1px solid var(--navy-border);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    outline: none;
+    width: 100%;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 10px var(--gold-glow);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #475569;
+}
+
+.form-select {
+    cursor: pointer;
+}
+
+.form-select option {
+    background-color: var(--navy-surface);
+    color: var(--text-primary);
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+.btn-block {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* =========================================
+   Responsive Adjustments
+   ========================================= */
+@media (max-width: 850px) {
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .about-grid {
+        text-align: center;
+    }
+
+    .about-image-wrapper {
+        max-width: 340px;
+        margin: 0 auto;
+    }
+
+    .about-actions {
+        justify-content: center;
+    }
+
+    .services-grid,
+    .skills-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info-card,
+    .contact-form-card {
+        padding: 1.75rem 1.25rem;
+    }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section: Logo & Navigation -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="home.html" class="logo-link">
+                    <!-- LOGO SYNTAX: Replace 'image.jpeg' with your logo file path if needed -->
+                    <img src="image.jpeg" alt="Portfolio Logo" class="logo-img">
+                    <span class="logo-name" style="font-family: Georgia, 'Times New Roman', Times, serif;">Zeezah.TECH</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="skills.html" class="nav-link">Skills</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-main">
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="section-header">
+                    <p class="section-subtitle">Reach Out</p>
+                    <h1 class="section-title">Get In Touch</h1>
+                    <p class="section-description">
+                        Have a project in mind or want to collaborate? Send a message and let's create something extraordinary together.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Contact Information Column -->
+                    <div class="contact-info-card">
+                        <h2 class="contact-info-title">Let's Discuss Your Project</h2>
+                        <p class="contact-info-text">
+                            I am open to freelance work, full-time roles, and creative partnerships in frontend development, graphic design, and desktop publishing.
+                        </p>
+
+                        <div class="contact-details">
+                            <div class="contact-detail-item">
+                                <div class="detail-label">Email</div>
+                                <div class="detail-value">zeezah.tech@example.com</div>
+                            </div>
+
+                            <div class="contact-detail-item">
+                                <div class="detail-label">Role</div>
+                                <div class="detail-value">Frontend Web Developer</div>
+                            </div>
+
+                            <div class="contact-detail-item">
+                                <div class="detail-label">Services</div>
+                                <div class="detail-value">Frontend Development, Graphics, Desktop Publishing</div>
+                            </div>
+
+                            <div class="contact-detail-item">
+                                <div class="detail-label">Availability</div>
+                                <div class="detail-value">Available for new projects & collaborations</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-note-box">
+                            <p class="note-text">
+                                Prompt response guaranteed within 24-48 hours.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Column -->
+                    <div class="contact-form-card">
+                        <form action="#" method="POST" class="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Jane Doe" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="e.g. jane@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service" class="form-label">Service Needed</label>
+                                <select id="service" name="service" class="form-select" required>
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option value="frontend">Frontend Web Development</option>
+                                    <option value="graphics">Graphics Design</option>
+                                    <option value="publishing">Desktop Publishing</option>
+                                    <option value="other">Other Inquiry</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-input" placeholder="Project inquiry / collaboration" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell me about your project, timeline, and requirements..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
